@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<h3>Все файлы пользователей</h3>
+<table class="table">
+
+    @foreach (var f in Model)
+    {
+        <tr>
+            <td><p>@f.User.Email</p></td>
+            <td><p>@f.FileName</p></td>
+            <td>
+                <a asp-area="" asp-controller="Home" asp-action="DownoloadFile" asp-route-FileId="@f.Id">Скачать файл</a>
+            </td>
+        </tr>
+    }
+</table>
+
